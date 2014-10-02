@@ -2,6 +2,10 @@ module SpreeComments
   class Engine < Rails::Engine
     engine_name 'spree_comments'
 
+    initializer 'spree_comments.preferences', before: :load_config_initializers do |app|
+      SpreeComments::Config = SpreeComments::Configuration.new
+    end
+
     config.autoload_paths += %W(#{config.root}/lib)
 
     # use rspec for tests
