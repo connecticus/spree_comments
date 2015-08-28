@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe SpreeComments::Notification do
   describe '#notify' do
-
     before do
       Spree::CommentMailer.stub_chain(:notify_email, :deliver)
     end
@@ -27,4 +26,5 @@ describe SpreeComments::Notification do
       end
     end
   end
+
 end

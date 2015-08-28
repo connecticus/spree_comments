@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe Spree::Admin::CommentsController do
-
   describe 'POST create' do
-
     stub_authorization!
 
     let(:notification) { SpreeComments::Notification.new(create(:comment)) }
