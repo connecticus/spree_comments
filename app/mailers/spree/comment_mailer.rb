@@ -9,7 +9,7 @@ class Spree::CommentMailer < ActionMailer::Base
     mail to: SpreeComments::Config.emails_to_notify, subject: Spree.t(
       :comment_email_subject,
       tenant: tenant,
-      date: date.strftime "%Y-%m-%d",
+      date: date.strftime("%Y-%m-%d"),
       count: comments.count
     )
   end
