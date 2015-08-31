@@ -1,14 +1,14 @@
 class Spree::CommentMailer < ActionMailer::Base
-  default from: Spree::Config.mails_from
+  default from: ENV['EMAIL_FROM'] || 'changeme@example.com'
 
-  def notify_email(comment)
-    @comment = comment
-    
+  def notify_email(comments, date)
+    @comments = comments
+    @date = date
+
     mail to: SpreeComments::Config.emails_to_notify, subject: Spree.t(
       :comment_email_subject,
-      user_email: comment.user.email,
-      type: comment.commentable_type.constantize.class_name,
-      number: comment.commentable.number
+      date: date.strftime "%Y-%m-%d",
+      count: comments.count
     )
   end
 end

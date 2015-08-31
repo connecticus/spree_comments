@@ -1,4 +1,14 @@
-A comment was added from <%= @comment.user.email %> to <%= @comment.commentable_type.constantize.class_name %> number <%= @comment.commentable.number %>:
-<br />
-<br />
-<%= @comment.comment %>
+There are the comments left during the day: <%= @date.strftime %>:
+
+<ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <p>
+      From <%= comment.user.email %> to <%= comment.commentable_type.constantize.class_name %> number <%= comment.commentable.number %>:
+      </p>
+      <br />
+      <hr />
+      <p><%= comment.comment %></p>
+    </li>
+  <% end %>
+</ul>
