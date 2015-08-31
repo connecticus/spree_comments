@@ -12,7 +12,7 @@ namespace :notify_comments do
       comments = Spree::Comment.where(created_at: date_start...date_end)
 
       if comments.any?
-        Spree::CommentMailer.notify_email(comments, today).deliver
+        Spree::CommentMailer.notify_email(comments, today, tenant).deliver
       else
         puts "No new comments found for #{tenant} tenant"
       end
