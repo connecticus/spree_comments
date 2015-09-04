@@ -4,7 +4,7 @@ There are the comments left during the day: <%= @date.strftime %> on <%= @tenant
   <% @comments.each do |comment| %>
     <li>
       <p>
-      From <%= comment.user.email %> to <%= comment.commentable_type.constantize.class_name %> number <%= comment.commentable.number %>:
+      From <%= comment.user.email %> to <%= comment.commentable_type.constantize.name %> number <%= comment.commentable.number %>:
       </p>
       <br />
       <hr />
