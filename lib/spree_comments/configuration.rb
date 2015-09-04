@@ -1,10 +1,9 @@
 module SpreeComments
   class Configuration < Spree::Preferences::Configuration
-    preference :notification_methods, :string
     preference :notify_roles, :string, default: 'admin'
 
     def notification_methods
-      get(:notification_methods).split
+      ['email']
     end
 
     def emails_to_notify
