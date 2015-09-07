@@ -9,7 +9,7 @@ module SpreeComments
     def emails_to_notify
       Spree.user_class
         .includes(:spree_roles)
-        .where("#{Spree::Role.table_name}.name" => notify_roles.split)
+        .where("spree_roles.name" => notify_roles.split)
         .pluck(:email)
     end
   end
