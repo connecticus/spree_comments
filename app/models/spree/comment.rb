@@ -11,6 +11,6 @@ class Spree::Comment < ActiveRecord::Base
   #acts_as_voteable
 
   # NOTE: Comments belong to a user
-  belongs_to :user, class: Spree.user_class
+  belongs_to :user, class_name: Spree.user_class.name
 
 end
