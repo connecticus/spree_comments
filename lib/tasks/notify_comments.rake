@@ -1,7 +1,7 @@
 namespace :notify_comments do
   desc "Sends a digest with comments made during the day"
   task nightly: :environment do
-    today = Date.today
+    today = Date.today - 1.day
     date_start = today.beginning_of_day
     date_end = today.end_of_day
 
