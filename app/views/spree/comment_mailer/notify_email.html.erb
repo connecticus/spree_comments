@@ -1,10 +1,10 @@
-There are the comments left during the day: <%= @date.strftime %> on <%= @tenant %> shop:
+There are the comments left during the day: <%= @date.strftime %> on <%= root_url(only_path: false) %> shop:
 
 <ul>
   <% @comments.each do |comment| %>
     <li>
       <p>
-      From <%= comment.user.email %> to <%= comment.commentable_type.constantize.name %> number <%= link_to comment.commentable.number, spree.edit_admin_order_url(comment.commentable, host: @host) %>:
+      From <%= comment.user.email %> to <%= comment.commentable_type.constantize.name %> number <%= link_to comment.commentable.number, spree.edit_admin_order_url(comment.commentable) %>:
       </p>
       <br />
       <hr />
