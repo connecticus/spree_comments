@@ -1,4 +1,5 @@
 ru:
+ spree:
   said: сказал
   for: для
   comments: Комментарии
@@ -10,3 +11,5 @@ ru:
   applies_to: Применить к
   new_comment_type: Новый тип комментария
   editing_comment_type: Редактировать тип комментария
+  comments_count: Комментариии
+  commenter: Комментатор
